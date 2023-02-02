@@ -6,6 +6,12 @@ import org.springframework.stereotype.Service;
 public class HelloService {
 
     public String sayHello(String name){
-        return String.format("hello, %s !", name);
+        String format = String.format("hello, %s !", name);
+        System.out.println(format);
+        return format;
+    }
+
+    public String sayHelloButThrow(){
+        throw new RuntimeException(":(");
     }
 }

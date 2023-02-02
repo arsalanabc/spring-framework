@@ -9,7 +9,7 @@ public class Main {
 
         try (var c = new AnnotationConfigApplicationContext(ProjectConfig.class)){
             HelloService helloService = c.getBean(HelloService.class);
-            System.out.println(helloService.sayHello("John"));
+            System.out.println("FROM main " + helloService.sayHello("John"));
         }
     }
 }
