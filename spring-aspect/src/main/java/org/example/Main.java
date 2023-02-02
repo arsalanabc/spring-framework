@@ -1,7 +1,15 @@
 package org.example;
 
+import config.ProjectConfig;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import services.HelloService;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        try (var c = new AnnotationConfigApplicationContext(ProjectConfig.class)){
+            HelloService helloService = c.getBean(HelloService.class);
+            System.out.println(helloService.sayHello("John"));
+        }
     }
 }
